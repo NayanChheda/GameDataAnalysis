@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Genre Selection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static', filename='specifiedgenrepage/css/Specified_genre_css.css')}}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    </head>
+    <body>
+        <main>
+            <section class="landing">
+                
+                <nav>
+                  <a href="/"  class="logo"><img src="{{url_for('static', filename='specifiedgenrepage/assets/GameHunt.svg')}}" class="logo"></a>
+                  <ul class="nav-links">
+                    <li><a href="#">Esports</a></li>
+                    <li><a href="/genre">Genre</a></li>
+                    <li><a href="/#contact">Contact Us</a></li>
+                    <li>
+                        <div class="search">
+                            <label>
+                                <form name = 'SearchBar'method="POST" action="javascript:loadItems(searchflag='True')">
+                                    <input type="text" name = 'search_val' placeholder="Search Here">
+                                    <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                                    <input type = 'submit'>
+                                </form>
+                            </label>
+                        </div>
+                    </li>
+                  </ul>
+                </nav>
+            </section>
+            <h1 id = "genre_name_op">{{genre}}</h1>         
+            <!-- <div class="geners_listing"> -->
+                <div id="scroller" class="mb-3">
+                    <template id ="post_template">
+                <a class="links" id='gameInfo' href="#">
+                    <div class="card hover">
+                        <div class="card_img"><img id='back_img' class="genre_img" src="#"></div>
+                        <h2 class="genre_name" id='game_name' style="color: black;"></h2>
+                        <!--more code regarding game rating presentation will come here so corrently only test conection and all the game of this genre fetching-->
+                    </div>
+                </a>
+            </template>
+                </div>
+                <div class="d-flex justify-content-center mb-3" id="sentinel">
+                    <div class="spinner-border" role="status"></div>
+                  </div>
+            <!-- </div> -->
+            
+        </main>
+        <script src="{{url_for('static',filename='specifiedgenrepage/specified_genre.js')}}" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Genre Selection</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static', filename='genrepage/css/genre_css.css')}}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <main>
+            <section class="landing">
+                
+                <nav>
+                  <a href="/"  class="logo"><img src="{{url_for('static', filename='genrepage/assets/GameHunt.svg')}}" class="logo"></a>
+                  <ul class="nav-links">
+                    <li>Esports</li>
+                    <a href="/#contact">Contact Us</a>
+                    <li>
+                        <div class="search">
+                            <label>
+                                <input type="text" placeholder="Search Here">
+                                <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                    </li>
+                  </ul>
+                </nav>
+            </section>
+            <h1>Game Genre's</h1> 
+            <div class="geners_listing">
+                <a class="links" href="{{ url_for('specifiedGenre',id='Action')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/action games.jpg')}}"></div>
+                        <h2 class="genre_name">Action</h2>
+                        <p class="genre_discreption"> An action game is a video game genre that emphasizes physical challenges, including hand–eye coordination and reaction-time. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Adventure')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/adventure.jpg')}}"></div>
+                        <h2 class="genre_name">Adventure</h2>
+                        <p class="genre_discreption"> An adventure game is a video game in which the player assumes the role of a protagonist in an interactive story driven by exploration and/or puzzle-solving. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Arcade')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/arcade.cms')}}"></div>
+                        <h2 class="genre_name">Arcade Games</h2>
+                        <p class="genre_discreption"> An arcade game or coin-op game is a coin-operated entertainment machine typically installed in public businesses such as restaurants, bars and amusement arcades. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Board')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/board.png')}}"></div>
+                        <h2 class="genre_name">Board Games</h2>
+                        <p class="genre_discreption"> Board games are tabletop games that typically use pieces moved or placed on a pre-marked board (playing surface) and often include elements of table, card, role-playing, and miniatures games as well. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Card')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/card.jpg')}}"></div>
+                        <h2 class="genre_name">Card Games</h2>
+                        <p class="genre_discreption">  Card game is any game using playing cards as the primary device with which the game is played, be they traditional or game-specific. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Casual')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/casual games.jpeg')}}"></div>
+                        <h2 class="genre_name">Casual Games</h2>
+                        <p class="genre_discreption"> A casual game is a video game targeted at a mass market audience, as opposed to a hardcore game, which is targeted at hobbyist gamers. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Educational')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/educational.jpg')}}"></div>
+                        <h2 class="genre_name">Educational Games</h2>
+                        <p class="genre_discreption"> Educational games are games explicitly designed with educational purposes, or which have incidental or secondary educational value. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Family')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/family.jpg')}}"></div>
+                        <h2 class="genre_name">Family Games</h2>
+                        <p class="genre_discreption">  Family games are games that are played at social gatherings to facilitate interaction and provide entertainment and recreation. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Fighting')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/fighting.jpg')}}"></div>
+                        <h2 class="genre_name">Fighting Games</h2>
+                        <p class="genre_discreption"> A fighting game (also known as versus fighting game) is a video game genre that involve combat between pairs of fighters with game elements such as blocking, grappling, counter-attacking, and chaining attacks together into "combos". </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Indie')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/indie-games.jpg')}}"></div>
+                        <h2 class="genre_name">Indie Games</h2>
+                        <p class="genre_discreption"> An indie game, short for independent video game, is a video game typically created by individuals or smaller development teams without the financial and technical support of a large game publisher, in contrast to most "AAA" (triple-A) games. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Multiplayer')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/masively_multiplayer.jpg')}}"></div>
+                        <h2 class="genre_name">Multiplayer Games</h2>
+                        <p class="genre_discreption"> A multiplayer video game is a video game in which more than one person can play in the same game environment at the same time, either locally and on the same computing system , locally and on different computing systems via a local area network, or via a wide area network, most commonly the Internet . </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Platformer')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/platformer.jpg')}}"></div>
+                        <h2 class="genre_name">Platformer Games</h2>
+                        <p class="genre_discreption">A platform game (often simplified as platformer or jump 'n' run games) is a video game genre and subgenre of action games in which the core objective is to move the player character between points in a rendered environment. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Puzzle')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/puzzle.jpg')}}"></div>
+                        <h2 class="genre_name">Puzzle Games</h2>
+                        <p class="genre_discreption">  Puzzle video games can test many problem-solving skills, including logic, pattern recognition, sequence solving, spatial recognition, and word completion. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Racing')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/racing.jpg')}}"></div>
+                        <h2 class="genre_name">Racing Games</h2>
+                        <p class="genre_discreption"> Racing games are a video game genre in which the player participates in a racing competition. They may be based on anything from real-world racing leagues to fantastical settings </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='RPG')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/RPG.png')}}"></div>
+                        <h2 class="genre_name">RPG Games</h2>
+                        <p class="genre_discreption"> A role-playing game (sometimes spelled roleplaying game;[1][2] abbreviated RPG) is a game in which players assume the roles of characters in a fictional setting. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Shooter')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/shooter.jpg')}}"></div>
+                        <h2 class="genre_name">Shooter Games</h2>
+                        <p class="genre_discreption"> Shooter video games or shooters are a subgenre of action video games where the focus is almost entirely on the defeat of the character's enemies using the weapons given to the player. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Simulation')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/simulation.jpg')}}"></div>
+                        <h2 class="genre_name">Simulation Games</h2>
+                        <p class="genre_discreption"> A simulation game attempts to copy various activities from real life in the form of a game for various purposes such as training, analysis, prediction, or simply entertainment. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Sports')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/Sports.jpg')}}"></div>
+                        <h2 class="genre_name">Sports Games</h2>
+                        <p class="genre_discreption"> A sports game is a video game that simulates the practice of sports. Most sports have been recreated with a game, including team sports, track and field, extreme sports, and combat sports. </p>
+                    </div>
+                </a>
+                <a class="links" href="{{ url_for('specifiedGenre',id='Strategy')}}">
+                    <div class="card hover">
+                        <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/strategy-games.jpg')}}"></div>
+                        <h2 class="genre_name">Strategy Games</h2>
+                        <p class="genre_discreption"> A strategy game or strategic game is a game (e.g. a board game) in which the players' uncoerced, and often autonomous, decision-making skills have a high significance in determining the outcome. </p>
+                    </div>
+                </a>
+            </div>
+        </main>
+        <script src="" async defer></script>
+    </body>
+</html>
