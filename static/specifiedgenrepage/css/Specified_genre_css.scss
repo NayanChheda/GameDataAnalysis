@@ -7,7 +7,7 @@
   main {
     font-family: "Heebo", sans-serif;
     color: aliceblue;
-    background: url("../assets/img/images.png");
+    background: url("../assets/images.png");
     background-size: 100%;
     height: 100vh;
 }
@@ -91,7 +91,7 @@
       text-align: center;
       background-color: rgba(37, 37, 37, 0.733);
   }
-  
+
   .card_img{
     height: 250px;
     width: 100%;
@@ -140,13 +140,15 @@
     position:relative;
     width:200px;
     transform: translateY(-10px);
-    background-color: #ffffff;
+    background-color: transparent ;
     border-radius: 40px;
+    
   }
   .search label
   {
     position: relative;
     width:100%;
+    
   }
   .search label input
   {
@@ -164,7 +166,7 @@
   {
     position: absolute;
     left: 15px;
-    top: 2px;
+    top: 10px;
     z-index: 12;
     color: black;
     background-color: transparent;

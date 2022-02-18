@@ -36,7 +36,10 @@ def specifiedGenre(id):
 
 @app.route('/search', methods = ['POST'])
 def search():
-    return render_template('Specified_genre_page.html',genre='Search Resutls for:'+request.form['search_val'])
+    global database_conn
+    myCollection = database_conn['LatestGames']
+    myQuery = queries.search_results(myCollection, request.form['search_val'])
+    return render_template('searchResults.html',searchVal=request.form['search_val'],results = myQuery)
 
 
 
@@ -51,22 +54,29 @@ def lazy_load():
     myCollection = database_conn['LatestGames']
 
     if request.args:
-
-        if request.args.get("f") == 'False':
-
             myGenre = request.args.get("g")
             counter = int(request.args.get("c"))  # The 'counter' value sent in the QS
-            res = queries.lazy_loading(myGenre, myCollection, counter, queries.get_game_count(myGenre, myCollection))
-
-        elif request.args.get("f") == 'True':
-            print(request.args.get("val"))
-            counter = int(request.args.get("c"))
-            res = queries.search_results(myCollection, request.args.get("val"),counter,queries.get_search_count(request.args.get("val"), myCollection))
-            
+            res = queries.lazy_loading(myGenre, myCollection, counter, queries.get_game_count(myGenre, myCollection))            
 
     return res
+
+@app.route('/displayData')
+def display_game_data():
+    print("Inside game data")
+    global database_conn
+    if request.args:
+        print(request.args.get('name'))
+    retVal,secVal = queries.display_game_data(database_conn, request.args.get('name'))
+    # print(retVal)
+    return render_template('game_description_page.html',data=retVal,sec=secVal)
+
 
 if __name__ == '__main__':
     queries.hello()
     database_conn = queries.get_connection()
     app.run(debug=True)
+
+
+
+# myString = "{{url_for('displayData',game_name='+document.getElementById(`game_name`))}}"
+# "this.href='{{url_for(`displayData`,game_name='+document.getElementById(`game_name`).innerText+')}}'"

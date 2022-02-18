@@ -184,7 +184,7 @@ nav {
   width: 200px;
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
-  background-color: #ffffff;
+  background-color: transparent;
   border-radius: 40px;
 }
 
@@ -208,7 +208,7 @@ nav {
 .search-icon {
   position: absolute;
   left: 15px;
-  top: 2px;
+  top: 10px;
   z-index: 12;
   color: black;
   background-color: transparent;

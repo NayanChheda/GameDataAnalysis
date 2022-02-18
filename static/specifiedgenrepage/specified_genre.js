@@ -1,18 +1,13 @@
 var sentinel = document.querySelector('#sentinel');
 var scroller = document.querySelector("#scroller");
 var template = document.querySelector('#post_template')
-var genre = document.querySelector('#genre_name_op').innerText
-console.log(genre)
-var counter = 0;
-console.log(template)
+var genre = document.getElementById('genre_name_op').innerText
+var counter = 0
 
 // Function to request new items and render to the dom
-function loadItems(searchflag='False') {
-  var search_this = document.SearchBar.search_val.value
-  console.log("Searching for:"+search_this)
+function loadItems() {
   // Use fetch to request data and pass the counter value in the QS
-  fetch(`/lazyload?c=${counter}&g=${genre}&f=${searchflag}&val=${search_this}`).then((response) => {
-    console.log("wassup ishdfgnSNF")
+  fetch(`/lazyload?c=${counter}&g=${genre}`).then((response) => {
 
     // Convert the response data to JSON
     response.json().then((data) => {
@@ -30,6 +25,7 @@ function loadItems(searchflag='False') {
         let template_clone = template.content.cloneNode(true);
 
         // Query & update the template content
+        template_clone.getElementById('gameInfo').href = `/displayData?name=`+data[i]['name']
         template_clone.querySelector("#game_name").innerHTML = `${data[i]['name']}`;
         template_clone.querySelector("#back_img").src = data[i]['Background_image'];
 
@@ -68,3 +64,10 @@ var intersectionObserver = new IntersectionObserver(entries => {
 
 // Instruct the IntersectionObserver to watch the sentinel
 intersectionObserver.observe(sentinel);
+
+// function get_game_data(){
+//   var game_name = document.getElementById('post_template')
+//   console.log(game_name)
+//   console.log(document.getElementById('game_name'))
+//   window.location.href='/displayData?name='+game_name
+// }

@@ -22,8 +22,10 @@
                     <li>
                         <div class="search">
                             <label>
-                                <input type="text" placeholder="Search Here">
-                                <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                                <form action="/search" method="POST">
+                                    <input type="text" name='search_val' placeholder="Search.." name="search">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
                             </label>
                         </div>
                     </li>
@@ -53,7 +55,7 @@
                         <p class="genre_discreption"> An arcade game or coin-op game is a coin-operated entertainment machine typically installed in public businesses such as restaurants, bars and amusement arcades. </p>
                     </div>
                 </a>
-                <a class="links" href="{{ url_for('specifiedGenre',id='Board')}}">
+                <a class="links" href="{{ url_for('specifiedGenre',id='Board Games')}}">
                     <div class="card hover">
                         <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/board.png')}}"></div>
                         <h2 class="genre_name">Board Games</h2>
@@ -102,7 +104,7 @@
                         <p class="genre_discreption"> An indie game, short for independent video game, is a video game typically created by individuals or smaller development teams without the financial and technical support of a large game publisher, in contrast to most "AAA" (triple-A) games. </p>
                     </div>
                 </a>
-                <a class="links" href="{{ url_for('specifiedGenre',id='Multiplayer')}}">
+                <a class="links" href="{{ url_for('specifiedGenre',id='Massively Multiplayer')}}">
                     <div class="card hover">
                         <div class="card_img"><img class="genre_img" src="{{url_for('static', filename='genrepage/assets/images for dashboard/masively_multiplayer.jpg')}}"></div>
                         <h2 class="genre_name">Multiplayer Games</h2>

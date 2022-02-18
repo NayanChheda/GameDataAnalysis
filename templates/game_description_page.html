@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='infoPage/css/game_description_css.css')}}">
+    </head>
+    <body>
+        <main>
+        <!-- Navigation Bar Starts Here --> 
+        <section class="landing">  
+            <nav>
+              <a href="/"  class="logo"><img src="{{url_for('static',filename='infoPage/assets/GameHunt.svg')}}" class="logo"></a>
+              <ul class="nav-links">
+                <li><a href="#">Esports</a></li>
+                <li><a href="/genre">Genre</a></li>
+                <li><a href="/#contact">Contact Us</a></li>
+                <li>
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Search Here">
+                            <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </li>
+              </ul>
+            </nav>
+        </section>
+        <!-- Navigation Bar Ends Here --> 
+        </main>
+
+        <h1 class="game_name">{{ data.name }}</h1>
+
+        <!--image slider start-->
+        <div class="slider_box">
+            <div class="slider">
+              <div class="slides">
+                <!--radio buttons start-->
+                <input type="radio" name="radio-btn" id="radio1" >
+                <input type="radio" name="radio-btn" id="radio2" >
+                <input type="radio" name="radio-btn" id="radio3" >
+                <input type="radio" name="radio-btn" id="radio4" >
+                <input type="radio" name="radio-btn" id="radio5" >
+                <input type="radio" name="radio-btn" id="radio6" >
+                <!--radio buttons end-->
+                <!--slide images start-->
+                <div class="slide first">
+                  <div class="one_img">
+                  <img src="{{data.screenshots[0]}}" alt="" id="img1" class="img_pos">
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="one_img">
+                  <img src="{{data.screenshots[1]}}" alt="" id="img2" class="img_pos">
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="one_img">
+                  <img src="{{data.screenshots[2]}}" alt="" id="img3" class="img_pos">
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="one_img">
+                  <img src="*" alt="" id="img4" class="img_pos">
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="one_img">
+                  <img src="*" alt="" id="img5" class="img_pos">
+                  </div>
+                </div><div class="slide">
+                    <div class="one_img">
+                    <img src="*" alt="" id="img6" class="img_pos">
+                    </div>
+                  </div>
+                <!--slide images end-->
+                <!--automatic navigation start-->
+                <div class="navigation-auto">
+                  <div class="auto-btn1"></div>
+                  <div class="auto-btn2"></div>
+                  <div class="auto-btn3"></div>
+                  <div class="auto-btn4"></div>
+                  <div class="auto-btn5"></div>
+                  <div class="auto-btn6"></div>
+                </div>
+                <!--automatic navigation end-->
+              </div>
+              <!--manual navigation start-->
+              <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn2"></label>
+                <label for="radio3" class="manual-btn3"></label>
+                <label for="radio4" class="manual-btn4"></label>
+                <label for="radio5" class="manual-btn5"></label>
+                <label for="radio6" class="manual-btn6"></label>
+              </div>
+              <!--manual navigation end-->
+            </div>
+        </div>
+        <!--image slider end-->
+
+        <div class="info_bar">
+            <div class="backgroung_image">
+                <img class="bg_image" src="{{data.Background_image}}" style="height: 540px; width: 390px;">
+            </div>
+            <div class="information">
+                <div class="info_1">
+                    <div class="info_tab">
+                        Released on<br><br>
+                        Rating<br><br>
+                        Metacritic Rating<br><br>
+                        Esrb Rating<br><br>
+                        Original cost of the game<br><br><br>
+                        <h4>Required Sepcifications for the game</h4><br>
+                        Graphics Card<br><br>
+                        Required Storage<br><br>
+                        Minimum RAM Required<br><br>
+                    </div>
+                    <div class="info_tab_data">
+                        :-{{data.Released}}<!-- Released on --><br><br>
+                        :-{{data.Rating}}<!-- Rating --><br><br>
+                        :-{{data.metacritic}}<!-- Metacritic Rating --><br><br>
+                        :-{{data.esrb_rating}}<!-- Esrb Rating --><br><br>
+                        :-{{sec.OriginalCost}}<br><br><br><br><br>
+                        :-{{sec.Graphics}}<!-- Graphics Card --><br><br>
+                        :-{{sec.Storage}}<!-- Required Storage --><br><br>
+                        :-{{sec.Memory}}<!-- Minimum RAM Required --><br><br><br>
+                    </div>
+                </div>
+                <!-- languages and Genres of the game -->
+                <h4>Languages Available In :-</h4>
+                <div class="info_bubble_flow"><!-- please make sure you give different ids here because these ave same classes -->
+                    <div class="info_bubble"> {{sec.Languages}} </div>
+                    <br><br>
+                </div>
+                <h4>Genre of the game:-(Tags)</h4>
+                <div class="info_bubble_flow"><!-- please make sure you give different ids here because these ave same classes -->
+                    <div class="info_bubble"> {{sec.Tags}} </div>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        <div class="description">
+            <h3> Description </h3><br>
+            <p>
+                {{sec.Description}}
+            </p>
+        </div>
+        <div class="down_div">
+            <a class="download" href="{{sec.SteamURL}}"><b>Download The Game<b></a>
+        </div>
+        <script src="" async defer></script>
+    </body>
+</html>

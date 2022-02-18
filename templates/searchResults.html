@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Genre Selection</title>
+        <title>Search Results</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{url_for('static', filename='specifiedgenrepage/css/Specified_genre_css.css')}}">
@@ -24,34 +24,33 @@
                     <li><a href="/#contact">Contact Us</a></li>
                     <li>
                         <div class="search">
-                            <form action="/search" method="POST">
-                                <input type="text" name='search_val' placeholder="Search.." name="search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
+                            <label>
+                                <form name = 'SearchBar'method="POST" action="/search">
+                                    <input type="text" name = 'search_val' placeholder="Search Here">
+                                    <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                                    <input type = 'submit'>
+                                </form>
+                            </label>
                         </div>
                     </li>
                   </ul>
                 </nav>
             </section>
-            <h1 id = "genre_name_op">{{genre}}</h1>         
+            <h1 id = "genre_name_op">Search Results</h1>         
             <!-- <div class="geners_listing"> -->
-                <div id="scroller" class="mb-3 geners_listing">
-                <template id ="post_template">
-                    <a class="geners_listing" id='gameInfo' href="">
-                        <div class="card" style="background-color: rgba(37, 37, 37, 0.733) ; color: rgb(255, 255, 255);">
-                            <div class="card_img"><img id='back_img' class="genre_img" src="#"></div>
-                            <h2 class="genre_name" id='game_name' style="color: rgb(255, 255, 255); text-decoration: none;" ></h2>
-                            <!--more code regarding game rating presentation will come here so corrently only test conection and all the game of this genre fetching-->
-                        </div>
-                    </a>
-                </template>
-                </div>
-                <div class="d-flex justify-content-center mb-3" id="sentinel">
-                    <div class="spinner-border" role="status"></div>
-                  </div>
+                {% for i in results %}
+                
+                <a class="links" id='gameInfo' href="/displayData?name={{i.name}}">
+                    <div class="card hover">
+                        <div class="card_img"><img id='back_img' class="genre_img" src="{{ i.Background_image }}"></div>
+                        <h2 class="genre_name" id='game_name' style="color: black;">{{ i.name }}</h2>
+                        <!--more code regarding game rating presentation will come here so corrently only test conection and all the game of this genre fetching-->
+                    </div>
+                </a>
+                {% endfor %}
             <!-- </div> -->
             
         </main>
-        <script src="{{url_for('static',filename='specifiedgenrepage/specified_genre.js')}}" async defer></script>
+        <!-- <script src="{{url_for('static',filename='specifiedgenrepage/specified_genre.js')}}" async defer></script> -->
     </body>
 </html>
