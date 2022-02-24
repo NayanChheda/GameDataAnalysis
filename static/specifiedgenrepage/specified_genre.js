@@ -1,3 +1,4 @@
+// Get the html elements 
 var sentinel = document.querySelector('#sentinel');
 var scroller = document.querySelector("#scroller");
 var template = document.querySelector('#post_template')
@@ -42,7 +43,6 @@ function loadItems() {
 
 // Create a new IntersectionObserver instance
 var intersectionObserver = new IntersectionObserver(entries => {
-    console.log('wassup')
 
   // Uncomment below to see the entry.intersectionRatio when
   // the sentinel comes into view
@@ -65,9 +65,3 @@ var intersectionObserver = new IntersectionObserver(entries => {
 // Instruct the IntersectionObserver to watch the sentinel
 intersectionObserver.observe(sentinel);
 
-// function get_game_data(){
-//   var game_name = document.getElementById('post_template')
-//   console.log(game_name)
-//   console.log(document.getElementById('game_name'))
-//   window.location.href='/displayData?name='+game_name
-// }
